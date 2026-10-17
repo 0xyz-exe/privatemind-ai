@@ -18,6 +18,13 @@ def test_health_check():
     assert data["status"] == "ok"
     assert "inference_mode" in data
 
+
+def test_root():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json()["status"] == "ok"
+
+
 def test_create_conversation():
     response = client.post("/api/conversations", json={"title": "Test Chat"})
     assert response.status_code == 200
