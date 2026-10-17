@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from database import get_db, Conversation, Message
 from providers.factory import get_provider
+from datetime import datetime
 import json
 
 router = APIRouter()
@@ -18,20 +19,18 @@ class MessageResponse(BaseModel):
     role: str
     content: str
     sources: list[dict] | None = None
-    created_at: str
+    created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 class ConversationResponse(BaseModel):
     id: int
     title: str
-    created_at: str
-    updated_at: str
+    created_at: datetime
+    updated_at: datetime
     messages: list[MessageResponse] = []
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 @router.post("/conversations", response_model=ConversationResponse)
 def create_conversation(req: CreateConversationRequest, db: Session = Depends(get_db)):

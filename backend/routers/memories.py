@@ -16,6 +16,8 @@ class UpdateMemoryRequest(BaseModel):
     enabled: bool | None = None
     tags: str | None = None
 
+from datetime import datetime
+
 class MemoryResponse(BaseModel):
     id: int
     content: str
@@ -23,11 +25,10 @@ class MemoryResponse(BaseModel):
     enabled: bool
     tags: str | None
     source: str | None
-    created_at: str
-    updated_at: str
+    created_at: datetime
+    updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 @router.post("/memories", response_model=MemoryResponse)
 def create_memory(req: CreateMemoryRequest, db: Session = Depends(get_db)):

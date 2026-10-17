@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
 from sqlalchemy.orm import Session
 from database import get_db, Document
 from pydantic import BaseModel
+from datetime import datetime
 
 router = APIRouter()
 
@@ -12,10 +13,9 @@ class DocumentResponse(BaseModel):
     file_size: int
     status: str
     chunk_count: int
-    created_at: str
+    created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 @router.post("/documents", response_model=DocumentResponse)
 async def upload_document(file: UploadFile = File(...), db: Session = Depends(get_db)):
