@@ -2,6 +2,22 @@
 
 **Local-first personal AI assistant for conversations, documents, and memories.**
 
+Repository: https://github.com/0xyz-exe/privatemind-ai
+
+## Screenshots
+
+### Conversational Chat Workspace
+![Chat workspace](docs/screenshots/01_chat_workspace.png)
+
+### Document Upload & RAG Knowledge Store
+![Document upload](docs/screenshots/02_documents.png)
+
+### User-Controlled Memory Store
+![Memory manager](docs/screenshots/03_memory_manager.png)
+
+### Model & Provider Configuration
+![Settings](docs/screenshots/04_settings.png)
+
 PrivateMind AI is a privacy-focused workspace with a FastAPI backend and a
 Next.js frontend. It runs locally by default and includes a deterministic demo
 provider, so the application can be started without an API key or a downloaded
