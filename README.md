@@ -6,17 +6,21 @@ Repository: https://github.com/0xyz-exe/privatemind-ai
 
 ## Screenshots
 
-### Conversational Chat Workspace
-![Chat workspace](docs/screenshots/01_chat_workspace.png)
+### 1. Conversational Chat Workspace
+Antarmuka percakapan asisten cerdas berbasis local-first yang aman dengan bilah navigasi riwayat chat, tombol inisiasi percakapan baru, tampilan pesan pengguna, serta respon asistensi yang terstruktur lengkap dengan rujukan sitasi sumber dokumen (grounded citations) dan penanda status mode inferensi lokal:
+![Conversational Chat Workspace](docs/screenshots/01_chat_workspace.png)
 
-### Document Upload & RAG Knowledge Store
-![Document upload](docs/screenshots/02_documents.png)
+### 2. Document Upload & RAG Knowledge Store
+Perpustakaan penyimpanan dokumen pengetahuan lokal (Retrieval-Augmented Generation / RAG) yang mendukung format berkas `.pdf`, `.md`, dan `.txt` dengan status pemrosesan indeks otomatis, pencatatan jumlah potongan teks (*chunk count*), ukuran berkas, serta tanggal pengunggahan untuk penelusuran semantik privat:
+![Document Upload & RAG Knowledge Store](docs/screenshots/02_documents.png)
 
-### User-Controlled Memory Store
-![Memory manager](docs/screenshots/03_memory_manager.png)
+### 3. User-Controlled Memory Store
+Pusat manajemen memori persisten yang sepenuhnya dikendalikan oleh pengguna (*user-controlled memory*), memungkinkan penyimpanan profil, preferensi format sitasi ilmiah, konteks riset tesis, dan batasan privasi dengan fitur aktivasi/nonaktivasi (*enable/disable*) dan penghapusan langsung tanpa ketergantungan server cloud:
+![User-Controlled Memory Store](docs/screenshots/03_memory_manager.png)
 
-### Model & Provider Configuration
-![Settings](docs/screenshots/04_settings.png)
+### 4. Model & Provider Configuration
+Halaman pengaturan diagnostik sistem dan konfigurasi model bahasa lokal yang menampilkan status kesehatan koneksi backend, keterhubungan basis data SQLite lokal, pemilihan engine inferensi (Demo, Ollama Llama 3.2, atau OpenAI API), serta penegasan komitmen privasi isolasi data tanpa panggilan jaringan eksternal:
+![Model & Provider Configuration](docs/screenshots/04_settings.png)
 
 PrivateMind AI is a privacy-focused workspace with a FastAPI backend and a
 Next.js frontend. It runs locally by default and includes a deterministic demo
